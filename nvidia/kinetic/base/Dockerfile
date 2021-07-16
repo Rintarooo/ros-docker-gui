@@ -1,6 +1,6 @@
 FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu16.04
 
-MAINTAINER Athanasios Tasoglou <athanasios@tasoglou.net>
+MAINTAINER Rintarooo <310rnomeado@gmail.com>
 LABEL Description="ROS-Kinetic-Desktop (Ubuntu 16.04)" Vendor="TurluCode" Version="2.4"
 LABEL com.turlucode.ros.version="kinetic"
 
@@ -13,7 +13,8 @@ lsb-release \
 mesa-utils \
 git \
 subversion \
-nano \
+vim \
+# nano \
 terminator \
 xterm \
 wget \

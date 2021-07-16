@@ -1,6 +1,6 @@
-FROM turlucode/ros-kinetic:nvidia
+FROM rintarooo/ros-kinetic:nvidia
 
-MAINTAINER Athanasios Tasoglou <athanasios@tasoglou.net>
+MAINTAINER Rintarooo <310rnomeado@gmail.com>
 LABEL Description="ROS-Kinetic-Desktop with CUDA 8 support (Ubuntu 16.04)" Vendor="TurluCode" Version="1.1"
 
 # Install packages without prompting the user to answer any questions
