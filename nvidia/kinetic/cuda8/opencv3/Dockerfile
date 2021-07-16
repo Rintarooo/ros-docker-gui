@@ -38,12 +38,12 @@ RUN echo "deb-src http://packages.ros.org/ros/ubuntu xenial main" >> /etc/apt/so
       # echo "find" && \
       # find / -iname "ros-kinetic-opencv" && \
       # cd ros-kinetic-opencv3-3.1.0 && \
+      # dpkg-source --before-build ros-kinetic-opencv3-3.3.1 && \
       cd ros-kinetic-opencv3-3.3.1 && \
       echo "**ls**" && \
       ls && \
       # apt-get build-dep ros-kinetic-opencv3-3.1.0 && \
-      # apt-get build-dep ros-kinetic-opencv3-3.3.1 && \
-      dpkg-source --before-build ros-kinetic-opencv3-3.3.1 && \
+      apt-get build-dep ros-kinetic-opencv3-3.3.1 && \
       dpkg-buildpackage -b -uc && \
       cd ..  && \
       mkdir /usr/src/deb && \
