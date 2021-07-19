@@ -81,9 +81,9 @@ nvidia_ros_indigo_cuda10-1_cudnn7_opencv3: nvidia_ros_indigo_cuda10-1_cudnn7 ## 
 
 ## KINETIC
 
-# nvidia_ros_kinetic: ## [NVIDIA] Build ROS  Kinetic Container
-# 	docker build -t turlucode/ros-kinetic:nvidia nvidia/kinetic/base
-# 	@printf "\n\033[92mDocker Image: turlucode/ros-kinetic:nvidia\033[0m\n"
+nvidia_ros_kinetic: ## [NVIDIA] Build ROS  Kinetic Container
+	docker build -t turlucode/ros-kinetic:nvidia nvidia/kinetic/base
+	@printf "\n\033[92mDocker Image: turlucode/ros-kinetic:nvidia\033[0m\n"
 
 nvidia_ros_kinetic_rintarooo: ## [NVIDIA] Build ROS  Kinetic Container
 	docker build -t rintarooo/ros-kinetic:nvidia nvidia/kinetic/base

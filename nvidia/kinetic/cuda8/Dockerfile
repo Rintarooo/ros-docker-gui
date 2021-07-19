@@ -15,16 +15,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     echo "$NVIDIA_GPGKEY_SUM  cudasign.pub" | sha256sum -c --strict - && rm cudasign.pub && \
     echo "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" > /etc/apt/sources.list.d/cuda.list
 
-ENV CUDA_VERSION 8.0.61
+# https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
+# ENV CUDA_VERSION 8.0.61
+ENV CUDA_VERSION 8.0.44
+
 ENV CUDA_PKG_VERSION 8-0=$CUDA_VERSION-1
 LABEL com.turlucode.ros.cuda="${CUDA_VERSION}"
 
 ## CUDA Runtime-packages
+# cuda-cublas-8-0=8.0.61.2-1 \ https://developer.download.nvidia.com/compute/cuda/repos/sles114/x86_64/
 RUN apt-get update && apt-get install -y --no-install-recommends \
         cuda-nvrtc-$CUDA_PKG_VERSION \
         cuda-nvgraph-$CUDA_PKG_VERSION \
         cuda-cusolver-$CUDA_PKG_VERSION \
-        cuda-cublas-8-0=8.0.61.2-1 \
+        cuda-cublas-$CUDA_PKG_VERSION \
         cuda-cufft-$CUDA_PKG_VERSION \
         cuda-curand-$CUDA_PKG_VERSION \
         cuda-cusparse-$CUDA_PKG_VERSION \
@@ -40,6 +44,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES all
 ENV NVIDIA_REQUIRE_CUDA "cuda>=8.0"
 
 ## CUDA Devel-packages
+# cuda-cublas-dev-8-0=8.0.61.2-1 \
 RUN apt-get update && apt-get install -y --no-install-recommends \
         cuda-core-$CUDA_PKG_VERSION \
         cuda-misc-headers-$CUDA_PKG_VERSION \
@@ -48,7 +53,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         cuda-nvml-dev-$CUDA_PKG_VERSION \
         cuda-nvgraph-dev-$CUDA_PKG_VERSION \
         cuda-cusolver-dev-$CUDA_PKG_VERSION \
-        cuda-cublas-dev-8-0=8.0.61.2-1 \
+        cuda-cublas-dev-$CUDA_PKG_VERSION \
         cuda-cufft-dev-$CUDA_PKG_VERSION \
         cuda-curand-dev-$CUDA_PKG_VERSION \
         cuda-cusparse-dev-$CUDA_PKG_VERSION \
